@@ -565,15 +565,15 @@ int main(int argc, char **argv)
 	char *file;
 	int sz, edit = 0;
 
+	if (argc != 2) {
+		printf("usage: fwdump <pm4.fw>\n");
+		return -1;
+	}
+
 	if (!strcmp(argv[1], "-e")) {
 		edit = 1;
 		argv++;
 		argc--;
-	}
-
-	if (argc != 2) {
-		printf("usage: fwdump <pm4.fw>\n");
-		return -1;
 	}
 
 	file = argv[1];
